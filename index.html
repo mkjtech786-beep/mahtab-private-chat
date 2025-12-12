@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator Support Chat</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- USER REGISTRATION -->
+    <div id="registerModal" class="user-registration-modal">
+        <div class="registration-form">
+            <h2>Welcome</h2>
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="regName" placeholder="Enter name">
+            </div>
+
+            <div class="form-group">
+                <label>Game ID</label>
+                <input type="text" id="regID" placeholder="Enter game ID">
+            </div>
+
+            <button class="submit-btn" onclick="registerUser()">Continue</button>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div class="main-app" style="display:none;">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h2>Aviator Support Chat</h2>
+        </div>
+
+        <!-- CHAT AREA -->
+        <div class="chat-container" id="chatArea">
+            <div class="messages-area" id="messages"></div>
+
+            <div class="message-input-bar">
+                <input id="msgInput" type="text" placeholder="Type your message...">
+                <button id="sendBtn"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- ADMIN PANEL -->
+        <div class="admin-panel" id="adminPanel" style="display:none;">
+            <h2>Admin Panel</h2>
+            <div id="adminMessages"></div>
+        </div>
+    </div>
+
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
